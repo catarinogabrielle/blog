@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <header>
+                <a href="index.html">
+                    <img aria-label="logo style" class="logo" src="assets/logo_preta.png">
+                </a>
+
+                <div>
+                    <input type="text" id="search" name="search" placeholder="O que procura?">
+                    <button class="btnSearch">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </header>
+
+            <main>
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                        <img class="banner" aria-label="banner style" src="assets/banner2.png">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img class="banner" aria-label="banner style" src="assets/banner1.png">
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+                </div>
+
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                </div>
+
+                <h1>Conheça nossos Serviços</h1>
+                <div class="line"></div>
+                <label>Encontre o serviço ideal para você </label>
+
+                <div class="contentService">
+                    <img aria-label="service" src="assets/banner2.png">
+                    <img aria-label="service" src="assets/banner1.png">
+                    <img aria-label="service" src="assets/banner2.png">
+                </div>
+
+                <div class="content">
+                    <div class="cardService">
+                        <img aria-label="service" src="assets/banner1.png">
+                        <div class="box">
+                            <h2>Titulo</h2>
+                            <h4>Descrição completa aqui!</h4>
+                            <div></div>
+                            <h3>Categoria do produto aqui</h3>
+                        </div>
+                    </div>
+
+                    <div class="cardService">
+                        <img aria-label="service" src="assets/banner2.png">
+                        <div class="box">
+                            <h2>Titulo</h2>
+                            <h4>Descrição completa aqui!</h4>
+                            <div></div>
+                            <h3>Categoria do produto aqui</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="title">Conheça nossos Produtos</h1>
+
+                <div class="contentCard">
+                    <div class="card">
+                        <img aria-label="service" src="assets/banner2.png">
+                        <h2>Titulo</h2>
+                        <h3>Descrição completa aqui!</h3>
+                    </div>
+
+                    <div class="card">
+                        <img aria-label="service" src="assets/banner2.png">
+                        <h2>Titulo</h2>
+                        <h3>Descrição completa aqui!</h3>
+                    </div>
+
+                    <div class="card">
+                        <img aria-label="service" src="assets/banner1.png">
+                        <h2>Titulo</h2>
+                        <h3>Descrição completa aqui!</h3>
+                    </div>
+
+                    <div class="card">
+                        <img aria-label="service" src="assets/banner2.png">
+                        <h2>Titulo</h2>
+                        <h3>Descrição completa aqui!</h3>
+                    </div>
+
+                    <div class="card">
+                        <img aria-label="service" src="assets/banner1.png">
+                        <h2>Titulo</h2>
+                        <h3>Descrição completa aqui!</h3>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <footer>
+            <a href="index.html">
+                <img aria-label="logo style" class="logo" src="assets/logo_branca.png">
+            </a>
+
+            <div>
+                <a href="#"><label>Politica de privacidade</label></a>
+                <a href="#"><label>Contato</label></a>
+            </div>
+        </footer>
+    </nav>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+        setInterval(function () {
+            plusSlides(1);
+        }, 5000);
+    </script>
+</body>
+
+</html>
